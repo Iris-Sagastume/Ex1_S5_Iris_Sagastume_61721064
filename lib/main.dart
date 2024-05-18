@@ -1,20 +1,27 @@
+// Agregue estilos y colores en main.dart o en un archivo separado de estilos.
+// Este ejemplo utiliza el tema predeterminado de Flutter.
+
+// lib/main.dart
+// lib/main.dart
 import 'package:flutter/material.dart';
+import 'package:examen_1/core/routes.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp.router(
+      title: 'Stephen King Books',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      routerDelegate: router.routerDelegate,
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
     );
   }
 }
