@@ -5,7 +5,10 @@ import 'package:examen_1/services/json_service.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListScreen extends StatefulWidget {
+  const BookListScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _BookListScreenState createState() => _BookListScreenState();
 }
 
@@ -22,13 +25,13 @@ class _BookListScreenState extends State<BookListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stephen King Books'),
+        title: const Text('Stephen King Books'),
       ),
       body: FutureBuilder<List<Book>>(
         future: futureBooks,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
@@ -39,7 +42,7 @@ class _BookListScreenState extends State<BookListScreen> {
                 final book = books[index];
                 return ListTile(
                   title: Text(book.title),
-                  subtitle: Text(book.author),
+                  subtitle: Text(book.publisher),
                   onTap: () {
                     context.go('/detail/${book.id}');
                   },
