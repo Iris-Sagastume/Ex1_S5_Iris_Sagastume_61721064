@@ -25,7 +25,7 @@ class _BookListScreenState extends State<BookListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Stephen King Books'),
+        title: const Text('Library'),
       ),
       body: FutureBuilder<List<Book>>(
         future: futureBooks,

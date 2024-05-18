@@ -18,9 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Stephen King Books',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+          useMaterial3: true),
       routerDelegate: router.routerDelegate,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,
